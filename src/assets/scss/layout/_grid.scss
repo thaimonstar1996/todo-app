@@ -1,14 +1,16 @@
+@use 'sass:math';
+
 // Mixins for build grid
 $grid-columns: 12;
 @mixin build-grid($size) {
   @for $i from 1 through $grid-columns {
     @if $size != '' {
       .col-#{$size}-#{$i} {
-        width: percentage($i / $grid-columns);
+        width: math.div($i, $grid-columns);
       }
     } @else {
       .col-#{$i} {
-        width: percentage($i / $grid-columns);
+        width: math.div($i, $grid-columns);
       }
     }
   }

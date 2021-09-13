@@ -1,5 +1,7 @@
 // === Function convert px to rem === //
 // How to use: { transform: translateX(#{f-pxRem(22)}); border: #{f-pxRem(22)} solid map-get($colors, white); }
+@use 'sass:math';
+
 @function f-pxRem($value) {
-  @return 0rem + ($value / 16);
+  @return 0rem + math.div($value, 16)
 }
