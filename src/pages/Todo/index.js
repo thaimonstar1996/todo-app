@@ -49,6 +49,8 @@ function Todo() {
         return todos.filter(todo => todo.isCompleted === false);
       case 'all':
         return todos;
+      default:
+        return todos;
     }
   }
 
